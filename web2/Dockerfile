@@ -31,7 +31,7 @@ RUN apt-get update -y && \
 	apt-get install vim -y
 
 RUN	apt-get clean && \
-	rm -rf \var\lib\lists\*
+	rm -rf /var/lib/apt/lists\*
 
 RUN service apache2 restart
 EXPOSE 80
