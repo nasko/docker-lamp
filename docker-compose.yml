@@ -19,13 +19,13 @@ services:
           - ./dbdata:/var/lib/mysql
 
     web:
-      image: webdevops/php-apache:ubuntu-15.10
+      build: ./web2
       container_name: stm-web
       volumes:
           - ../backend:/var/www/stm
-          - ./stm.conf:/opt/docker/etc/httpd/conf.d/stm.dev.fb.conf
+          - ./stm.conf:/etc/apache2/sites-available/000-default.conf
       ports:
-       - "8080:80"
+       - "80:80"
       links:
        - db
 
