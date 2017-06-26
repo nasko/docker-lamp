@@ -19,10 +19,10 @@ services:
           - ./dbdata:/var/lib/mysql
 
     web:
-      build: ./web2
+      build: ./web
       container_name: project-web
       volumes:
-          - ../backend:/var/www/project
+          - ../project:/var/www/project
           - ./project.conf:/etc/apache2/sites-enabled/project.conf
       ports:
        - "80:80"
