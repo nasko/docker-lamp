@@ -19,7 +19,8 @@ services:
           - ./dbdata:/var/lib/mysql
 
     web:
-      build: ./web
+#      build: ./web
+      image: naskoistaken/apache:php-7.1
       container_name: project-web
       volumes:
           - ../project:/var/www/project
